@@ -11,13 +11,17 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:extension.si42",
+        "onCommand:extension.si24"
     ],
     "main": "./out/extension",
     "contributes": {
         "commands": [{
-            "command": "extension.sayHello",
-            "title": "Hello World"
+            "command": "extension.si42",
+            "title": "Switch indent from 4 to 2"
+        }, {
+            "command": "extension.si24",
+            "title": "Switch indent from 2 to 4"
         }]
     },
     "scripts": {
