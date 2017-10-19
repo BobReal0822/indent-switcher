@@ -27,7 +27,7 @@ export function getRange(editor: TextEditor, pattern: ISwitchOptions): Array<{
     const spaceNumber = match && match[0] && match[0].length;
     const indents = Math.floor(spaceNumber / pattern.from);
 
-    if (spaceNumber) {
+    if (spaceNumber && (spaceNumber / pattern.from === indents)) {
       matches.push({
         range: new Range(new Position(index, 0), new Position(index, spaceNumber)),
         indents
