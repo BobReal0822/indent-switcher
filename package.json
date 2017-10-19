@@ -1,9 +1,9 @@
 {
     "name": "indent-switcher",
     "displayName": "indent-switcher",
-    "description": "indent switcher",
-    "version": "1.0.0",
-    "publisher": "indent-switcher",
+    "description": "Switch indentations from 4 spaces to 2 spaces, or 2 to 4.",
+    "version": "1.0.1",
+    "publisher": "ephoton",
     "engines": {
         "vscode": "^1.17.0"
     },
@@ -18,10 +18,10 @@
     "contributes": {
         "commands": [{
             "command": "indentSwitcher.si4to2",
-            "title": "Switch indent from 4 to 2"
+            "title": "Switch indentations from 4 spaces to 2 spaces"
         }, {
             "command": "indentSwitcher.si2to4",
-            "title": "Switch indent from 2 to 4"
+            "title": "Switch indentations from 2 spaces to 4 spaces"
         }]
     },
     "scripts": {
