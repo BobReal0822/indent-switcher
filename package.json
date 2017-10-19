@@ -11,16 +11,16 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.si42",
-        "onCommand:extension.si24"
+        "onCommand:indentSwitcher.si4to2",
+        "onCommand:indentSwitcher.si2to4"
     ],
     "main": "./out/extension",
     "contributes": {
         "commands": [{
-            "command": "extension.si42",
+            "command": "indentSwitcher.si4to2",
             "title": "Switch indent from 4 to 2"
         }, {
-            "command": "extension.si24",
+            "command": "indentSwitcher.si2to4",
             "title": "Switch indent from 2 to 4"
         }]
     },

@@ -33,16 +33,16 @@ export function activate(context: ExtensionContext) {
 
     // Use the console to output diagnostic information (console.log) and errors (console.error).
     // This line of code will only be executed once when your extension is activated.
-    console.log('Congratulations, your extension "WordCount" is now active!');
+    console.log('Congratulations, your extension "IndentSwitcher" is now active!');
 
     // create a new word counter
     const indentManager = new IndentManager();
 
     const config = workspace.getConfiguration();
-    commands.registerTextEditorCommand('extension.si42', (editor, edit) => {
+    commands.registerTextEditorCommand('indentSwitcher.si4to2', (editor, edit) => {
         indentManager.switchIndent(SwitchFrom4To2);
     });
-    const si24 = commands.registerCommand('extension.si24', () => {
+    const si24 = commands.registerCommand('indentSwitcher.si2to4', () => {
         indentManager.switchIndent(SwitchFrom2To4);
     });
 }
