@@ -2,13 +2,15 @@
     "name": "indent-switcher",
     "displayName": "indent-switcher",
     "description": "Switch indentations from 4 spaces to 2 spaces, or 2 to 4.",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "publisher": "ephoton",
+    "icon": "images/icon.png",
     "engines": {
         "vscode": "^1.17.0"
     },
     "categories": [
-        "Other"
+        "Formatters",
+        "Linters"
     ],
     "activationEvents": [
         "onCommand:indentSwitcher.si4to2",
