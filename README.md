@@ -3,7 +3,7 @@
 Switch indentations from 4 spaces into 2 spaces, or 2 to 4.
 
 ## Features
-![indent switcher](./images/demo.gif)
+![indent switcher](https://ephoton.github.io/indent-switcher/images/demo.gif)
 
 ## Install
 
