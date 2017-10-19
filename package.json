@@ -2,7 +2,7 @@
     "name": "indent-switcher",
     "displayName": "indent-switcher",
     "description": "indent switcher",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "publisher": "indent-switcher",
     "engines": {
         "vscode": "^1.17.0"

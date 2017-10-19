@@ -2,7 +2,7 @@
 // Import the necessary extensibility types to use in your code below
 import { commands, Disposable, ExtensionContext, Position, Range, StatusBarAlignment, StatusBarItem, TextDocument, window, workspace} from 'vscode';
 
-import { getRange } from './match';
+import { getRange, getSpaces } from './match';
 
 export interface ISwitchOptions {
     from: number;
@@ -47,6 +47,11 @@ export function activate(context: ExtensionContext) {
     });
 }
 
+/**
+ * indent manager for commands
+ *
+ * @class IndentManager
+ */
 class IndentManager {
     public switchIndent(options: ISwitchOptions) {
         const editor = window.activeTextEditor;
@@ -59,16 +64,19 @@ class IndentManager {
             return;
         }
 
-        if (languages.indexOf(language) >= 0) {
+        if (languages.indexOf(language) < 0) {
             window.showErrorMessage(`Language don't support: ${ language }`);
         }
 
         try {
-            const ranges = getRange(editor, options === SwitchFrom2To4 ? /^\s{2}\S+/ : /^\s{4}\S+/, options);
+            const matches = getRange(editor, options);
 
             editor.edit(edit => {
-                for (const range of ranges) {
-                    edit.replace(range, options === SwitchFrom2To4 ? '    ' : '  ');
+                for (const match of matches) {
+                    const { range, indents } = match;
+                    const value = getSpaces(options === SwitchFrom2To4 ? '    ' : '  ', indents);
+
+                    edit.replace(range, value);
                 }
             });
 

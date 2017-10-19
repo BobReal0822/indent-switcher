@@ -1,6 +1,6 @@
 # indent-switcher README
 
-This is the README for your extension "indent-switcher". After writing up a brief description, we recommend including the following sections.
+Converts indent from 4 spaces into 2 spaces, or 2 to 4.
 
 ## Features
 

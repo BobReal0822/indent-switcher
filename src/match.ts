@@ -11,32 +11,47 @@ import { ISwitchOptions } from './extension';
  * @param {ISwitchOptions} pattern
  * @returns {Range[]}
  */
-export function getRange(editor: TextEditor, regex: RegExp, pattern: ISwitchOptions): Range[] {
-    const lineRegex = /[^|\n].*/g;
+export function getRange(editor: TextEditor, pattern: ISwitchOptions): Array<{
+    range: Range;
+    indents: number;
+}> {
+    // const lineRegex = /\n.*/g;
+    const regex = /^\s+/;
     const document = editor.document;
     const source = document.getText();
-    let line = 0;
 
-    const matches: Range[] = [];
+    const matches = [];
 
-    while (true) {
-        const match = lineRegex.exec(source);
+    source.split('\n').forEach((line, index) => {
+        const match = regex.exec(line);
+        const spaceNumber = match && match[0] && match[0].length;
+        const indents = Math.floor(spaceNumber / pattern.from);
 
-        if (!match) {
-            break;
+        if (spaceNumber) {
+            matches.push({
+                range: new Range(new Position(index, 0), new Position(index, spaceNumber)),
+                indents
+            });
         }
-
-        const isValid = regex.test(match[0]);
-
-        console.log('isValid & match: ', regex, match, isValid);
-        if (isValid) {
-            matches.push(new Range(new Position(line, 0), new Position(line, pattern.from)));
-        }
-
-        line ++;
-    }
-
-    console.log('matches in getRange: ', matches);
+    });
 
     return matches;
+}
+
+/**
+ * get spaces for replacement
+ *
+ * @export
+ * @param {string} target
+ * @param {number} indents
+ * @returns {string}
+ */
+export function getSpaces(target: string, indents: number): string {
+    let res = '';
+
+    for (let i = 0; i < indents; i++) {
+        res += target;
+    }
+
+    return res;
 }
