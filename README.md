@@ -15,7 +15,7 @@ ext install indent-switcher
 
 ## Usage
 
-You can use both command palette or keyboard shortcuts to switch indentations.
+You can use both command palette and keyboard shortcuts to switch indentations.
 
 ### Run with Command Palette
 
