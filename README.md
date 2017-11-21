@@ -1,6 +1,6 @@
 # [indent-switcher](https://marketplace.visualstudio.com/items?itemName=ephoton.indent-switcher) README
 
-Switch indentations from 4 spaces to 2 spaces, or 2 to 4.
+Switch indentations from 4 spaces to 2 spaces, or 2 to 4. [Rate](https://marketplace.visualstudio.com/items?itemName=ephoton.indent-switcher#review-details) if you like.
 
 ## Features
 ![indent switcher](https://ephoton.github.io/indent-switcher/images/demo.gif)
