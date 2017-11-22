@@ -1,4 +1,4 @@
-# [indent-switcher](https://marketplace.visualstudio.com/items?itemName=ephoton.indent-switcher) README
+# [indent-switcher](https://marketplace.visualstudio.com/items?itemName=ephoton.indent-switcher)
 
 Switch indentations from 4 spaces to 2 spaces, or 2 to 4. [Rate](https://marketplace.visualstudio.com/items?itemName=ephoton.indent-switcher#review-details) if you like.
 
@@ -22,7 +22,7 @@ You can use both command palette and keyboard shortcuts to switch indentations.
 * Press `F1` or `Ctrl+Shift+P` for Command Palette
 * Type or find "Switch indentations from 4(2) spaces to 2(4) spaces"
 
-### Binding to keyboard shortcuts
+### Bind to keyboard shortcuts
 
 * File > Preferences > Keyboard Shortcuts
 * Append the following into `keybindings.json`
