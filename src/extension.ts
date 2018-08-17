@@ -64,9 +64,9 @@ class IndentManager {
       return;
     }
 
-    if (languages.indexOf(language) < 0) {
-      window.showErrorMessage(`Language don't support: ${ language }`);
-    }
+    // if (languages.indexOf(language) < 0) {
+    //   window.showInformationMessage(`Language not supported: ${ language }`);
+    // }
 
     try {
       const matches = getRange(editor, options);
